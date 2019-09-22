@@ -3,6 +3,45 @@ const electron = require('electron')
 const app = electron.app
     // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const remote = require('electron').remote;
+
+const Menu  = electron.Menu
+const template = [
+    {
+        label: 'Refresh',
+        role: "reload"
+    },
+    {
+      role: 'Help',
+      submenu: [
+        {
+            label: 'About Cing Checker',
+            click: async () => {
+              const { shell } = require('electron')
+              await shell.openExternal('https://google.sk')
+            }
+        },
+        {
+          label: 'Learn More',
+          click: async () => {
+            const { shell } = require('electron')
+            await shell.openExternal('https://robotcing.sk')
+          }
+        },
+        {
+            label: 'About us',
+            click: async () => {
+              const { shell } = require('electron')
+              await shell.openExternal('https://robotcing.sk/about_us.html')
+            }
+          }
+      ]
+    }
+  ]
+  
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
+
 
 const path = require('path')
 const url = require('url')
@@ -18,7 +57,6 @@ function createWindow() {
         height: 900,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js')
         }
     })
 
@@ -41,6 +79,10 @@ function createWindow() {
     })
 }
 
+function getData(){
+    console.log('Called!!!');
+  }
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -58,6 +100,9 @@ app.on('activate', function() {
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
         createWindow()
+    }
+    while (true){
+        console.log("a")
     }
 })
 

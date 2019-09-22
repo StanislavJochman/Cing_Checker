@@ -1,5 +1,5 @@
 {
-    "name": "electron-serialport",
+    "name": "Cing-Checker",
     "version": "1.0.1",
     "description": "A minimal Electron application with node serialport",
     "main": "main.js",

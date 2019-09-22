@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!!</title>
+    <title>Cing Checker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <h1>Cing Checker</h1>
 
-    We are using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
+    <div id="port_selected"></div>
+    <button onclick="next_port()"><</button>
+    <button onclick="previous_port()">></button>
 
-    <div id="error"></div>
-    <div id="ports"></div>
 </body>
 
 <script src="./renderer.js"></script>
+<script src="script.js"></script>
+
 
 </html>
