@@ -2,6 +2,7 @@
 ################################
 import ReadCingSensors
 ################################
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -628,23 +629,24 @@ class Ui_MainWindow(object):
         self.actionTroubleshooting.setObjectName("actionTroubleshooting")
         self.actionExit = QtWidgets.QAction(MainWindow)
         self.actionExit.setObjectName("actionExit")
-        self.actionConnect = QtWidgets.QAction(MainWindow)
-        self.actionConnect.setObjectName("actionConnect")
+        self.actionConfig = QtWidgets.QAction(MainWindow)
+        self.actionConfig.setObjectName("actionConfig")
         self.actionExit_2 = QtWidgets.QAction(MainWindow)
         self.actionExit_2.setObjectName("actionExit_2")
         self.menuPort.addSeparator()
         self.menuPort.addAction(self.actionTroubleshooting)
         self.menuPort.addAction(self.actionWebsite)
         self.menuPort.addAction(self.actionAbout)
-        self.menuConnect.addAction(self.actionConnect)
+        self.menuConnect.addAction(self.actionConfig)
         self.menuConnect.addAction(self.actionExit_2)
         self.menubar.addAction(self.menuConnect.menuAction())
         self.menubar.addAction(self.menuPort.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
-        
+
+
+
         #Custom code
         ################################
         #self.actionAbout.triggered.connect(lambda: self.clicked("COM2"))
@@ -652,9 +654,10 @@ class Ui_MainWindow(object):
         self.actionWebsite.triggered.connect(lambda: ReadCingSensors.site_open())
         self.actionTroubleshooting.triggered.connect(lambda: ReadCingSensors.troubleshooting_open())
         self.actionExit.triggered.connect(lambda: sys.exit())
-        self.actionConnect.triggered.connect(lambda: ReadCingSensors.connect())
-        QtCore.QTimer.singleShot(1, self.updateData)
+        self.actionConfig.triggered.connect(lambda: ReadCingSensors.config_open())
+        QtCore.QTimer.singleShot(90, self.updateData)
         ################################
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -705,34 +708,14 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(_translate("MainWindow", "About Robot Cing"))
         self.actionTroubleshooting.setText(_translate("MainWindow", "Troubleshooting"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
-        self.actionConnect.setText(_translate("MainWindow", "Connect"))
+        self.actionConfig.setText(_translate("MainWindow", "Config"))
         self.actionExit_2.setText(_translate("MainWindow", "Exit"))
-    
+
     #Custom code
     ################################
     def updateData(self):
-        values = ReadCingSensors.update(self)
-        self.value1.setText(values[0])
-        self.value2.setText(values[1])
-        self.value3.setText(values[2])
-        self.value4.setText(values[3])
-        self.value5.setText(values[4])
-        self.value6.setText(values[5])
-        self.value7.setText(values[6])
-        self.value8.setText(values[7])
-        self.value9.setText(values[8])
-        self.value10.setText(values[9])
-        self.value11.setText(values[10])
-        self.value12.setText(values[11])
-        self.value13.setText(values[12])
-        self.value14.setText(values[13])
-        self.value15.setText(values[14])
-        self.value16.setText(values[15])
-        self.value17.setText(values[16])
-        self.value18.setText(values[17])
-        self.value19.setText(values[18])
-        self.value20.setText(values[19])
-        QtCore.QTimer.singleShot(1, self.updateData)
+        ReadCingSensors.update(self)
+        QtCore.QTimer.singleShot(90, self.updateData)
     ################################
 
 if __name__ == "__main__":

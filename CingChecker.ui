@@ -1430,7 +1430,7 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionConnect"/>
+    <addaction name="actionConfig"/>
     <addaction name="actionExit_2"/>
    </widget>
    <addaction name="menuConnect"/>
@@ -1457,9 +1457,9 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionConnect">
+  <action name="actionConfig">
    <property name="text">
-    <string>Connect</string>
+    <string>Config</string>
    </property>
   </action>
   <action name="actionExit_2">
