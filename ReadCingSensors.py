@@ -1,7 +1,7 @@
 import time
 import webbrowser
 import serial
-
+from sys import exit
 
 ports = ['/dev/ttyUSB','COM']
 error = 0
@@ -12,33 +12,37 @@ port = port[1]
 port = port.strip()
 
 def BoardNotFound():
-	print("Board is not available. Make sure your board is on (the green LED is on) and connected to the computer.")
-	exit()
-
-if(port == "AUTO"):
-	for x in range(len(ports)):
-		for y in range(255):
-			try:
-				ser = serial.Serial(ports[x]+str(y), 9600)
-				print("Opening port: {}. Please wait.".format())
-				break
-			except:
-				error += 1
-			if(error > len(ports)*256):
-				BoardNotFound()
-else:
-	ser = serial.Serial(port, 9600)
-
+    input("Board is not available. Make sure your Robot Cing is on (the green LED is on) and connected to the computer.\nPress enter to continue:")
+    exit(0)
+	
+def connect_to_board():
+    global ports,port,error,ser
+    if(port == "AUTO"):
+        for x in range(len(ports)):
+            for y in range(255):
+                try:
+                    ser = serial.Serial(ports[x]+str(y), 9600)
+                    print("Opening port: {}. Please wait.".format(ports[x]+str(y)))
+                    break
+                except:
+                    error += 1
+                if(error > len(ports)*256):
+                    BoardNotFound()
+    else:
+        try:
+            ser = serial.Serial(port, 9600)
+        except:
+            BoardNotFound()
 
 def ReadSerial():
-	try:
-		serial = str(ser.readline())
-		serial_string = ""
-		for x in range(2,len(serial)-5):
-			serial_string += serial[x]
-		return serial_string
-	except:
-		BoardNotFound()
+    try:
+        serial = str(ser.readline())
+        serial_string = ""
+        for x in range(2,len(serial)-5):
+            serial_string += serial[x]
+        return serial_string
+    except:
+        BoardNotFound()
 
 
 def update_values():
@@ -51,7 +55,6 @@ def update_values():
                 values.append(value)
             else:
                 values.append("Fail")
-        print(values)
         return(values)
     else:
         return []
@@ -59,7 +62,6 @@ def update_values():
 def update(self):
     starttime = time.time()
     values = update_values()
-    print(values)
     if(len(values)==20):
         self.value1.setText(values[0])
         self.value2.setText(values[1])
@@ -93,6 +95,7 @@ def troubleshooting_open():
 def config_open():
     webbrowser.open('Cing_Checker.config')
     
+connect_to_board()
 
 """
 #custom imports
@@ -108,7 +111,7 @@ import ReadCingSensors
         self.actionTroubleshooting.triggered.connect(lambda: ReadCingSensors.troubleshooting_open())
         self.actionExit.triggered.connect(lambda: sys.exit())
         self.actionConnect.triggered.connect(lambda: ReadCingSensors.connect())
-        QtCore.QTimer.singleShot(90, self.updateData)
+        QtCore.QTimer.singleShot(2000, self.updateData)
         ################################
     #Custom code
     ################################
