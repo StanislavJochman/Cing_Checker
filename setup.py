@@ -1,6 +1,6 @@
 from cx_Freeze import setup, Executable
 
-executables = [Executable("CingChecker.py",icon="icon.ico")]
+executables = [Executable("CingChecker.py",icon="icon.png")]
 
 setup(
     name="Cing Checker",
@@ -23,6 +23,7 @@ setup(
                                             "speaker.png",
                                             "TemperatureSensor.png",
                                             "ultrasonic.png",
+                                            "icon.png",
                                             "Cing_Checker.config"]}},
     executables = executables
     )

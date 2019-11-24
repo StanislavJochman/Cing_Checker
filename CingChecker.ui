@@ -25,8 +25,16 @@
   <property name="windowTitle">
    <string>Cing Checker</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>
+    <normalon>icon.png</normalon>icon.png</iconset>
+  </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(33, 37, 41);</string>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -116,7 +124,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/pot.png</pixmap>
+        <pixmap>pot.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -138,7 +146,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/lightsensor.png</pixmap>
+        <pixmap>lightsensor.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -253,7 +261,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Battery.png</pixmap>
+        <pixmap>Battery.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -272,7 +280,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/16x2.png</pixmap>
+        <pixmap>16x2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -315,7 +323,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/TemperatureSensor.png</pixmap>
+        <pixmap>TemperatureSensor.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -358,7 +366,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Enc.png</pixmap>
+        <pixmap>Enc.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -377,7 +385,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/bmp180.png</pixmap>
+        <pixmap>bmp180.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -450,7 +458,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/oled.png</pixmap>
+        <pixmap>oled.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -493,7 +501,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Gyro.png</pixmap>
+        <pixmap>Gyro.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -536,7 +544,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/shinearray.png</pixmap>
+        <pixmap>shinearray.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -603,7 +611,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/bmp180.png</pixmap>
+        <pixmap>bmp180.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -622,7 +630,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Button.png</pixmap>
+        <pixmap>Button.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -665,7 +673,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/ultrasonic.png</pixmap>
+        <pixmap>ultrasonic.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -828,7 +836,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/speaker.png</pixmap>
+        <pixmap>speaker.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -847,7 +855,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/shinearray.png</pixmap>
+        <pixmap>shinearray.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -962,7 +970,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Gyro.png</pixmap>
+        <pixmap>Gyro.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1101,7 +1109,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/servoboard.png</pixmap>
+        <pixmap>servoboard.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1216,7 +1224,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/Enc.png</pixmap>
+        <pixmap>Enc.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1379,7 +1387,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/lidar.png</pixmap>
+        <pixmap>lidar.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1398,7 +1406,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>img/lightsensor.png</pixmap>
+        <pixmap>lightsensor.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1421,7 +1429,6 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="separator"/>
     <addaction name="actionTroubleshooting"/>
     <addaction name="actionWebsite"/>
     <addaction name="actionAbout"/>
@@ -1431,7 +1438,7 @@
      <string>Menu</string>
     </property>
     <addaction name="actionConfig"/>
-    <addaction name="actionExit_2"/>
+    <addaction name="actionExitApp"/>
    </widget>
    <addaction name="menuConnect"/>
    <addaction name="menuPort"/>
@@ -1463,6 +1470,11 @@
    </property>
   </action>
   <action name="actionExit_2">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionExitApp">
    <property name="text">
     <string>Exit</string>
    </property>

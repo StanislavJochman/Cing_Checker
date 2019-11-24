@@ -12,7 +12,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(1280, 720)
         MainWindow.setMinimumSize(QtCore.QSize(1280, 720))
         MainWindow.setMaximumSize(QtCore.QSize(1280, 720))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setWindowOpacity(1.0)
+        MainWindow.setStyleSheet("background-color: rgb(33, 37, 41);")
         MainWindow.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -633,29 +638,28 @@ class Ui_MainWindow(object):
         self.actionConfig.setObjectName("actionConfig")
         self.actionExit_2 = QtWidgets.QAction(MainWindow)
         self.actionExit_2.setObjectName("actionExit_2")
-        self.menuPort.addSeparator()
+        self.actionExitApp = QtWidgets.QAction(MainWindow)
+        self.actionExitApp.setObjectName("actionExitApp")
         self.menuPort.addAction(self.actionTroubleshooting)
         self.menuPort.addAction(self.actionWebsite)
         self.menuPort.addAction(self.actionAbout)
         self.menuConnect.addAction(self.actionConfig)
-        self.menuConnect.addAction(self.actionExit_2)
+        self.menuConnect.addAction(self.actionExitApp)
         self.menubar.addAction(self.menuConnect.menuAction())
         self.menubar.addAction(self.menuPort.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-
-
-        #Custom code
+        #Custom code    
         ################################
         self.actionAbout.triggered.connect(lambda: ReadCingSensors.about_open())
         self.actionWebsite.triggered.connect(lambda: ReadCingSensors.site_open())
         self.actionTroubleshooting.triggered.connect(lambda: ReadCingSensors.troubleshooting_open())
-        self.actionExit.triggered.connect(lambda: sys.exit())
+        self.actionExitApp.triggered.connect(lambda: sys.exit())
+        self.actionConfig.triggered.connect(lambda: ReadCingSensors.config_open())
         QtCore.QTimer.singleShot(2000, self.updateData)
         ################################
-
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -708,6 +712,7 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionConfig.setText(_translate("MainWindow", "Config"))
         self.actionExit_2.setText(_translate("MainWindow", "Exit"))
+        self.actionExitApp.setText(_translate("MainWindow", "Exit"))
 
     #Custom code
     ################################
