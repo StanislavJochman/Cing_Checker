@@ -1446,7 +1446,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionWebsite">
    <property name="text">
-    <string>visit robotcing.sk</string>
+    <string>Visit robotcing.sk</string>
    </property>
   </action>
   <action name="actionAbout">

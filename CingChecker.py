@@ -706,7 +706,7 @@ class Ui_MainWindow(object):
         self.value19.setText(_translate("MainWindow", "Loading value"))
         self.menuPort.setTitle(_translate("MainWindow", "Help"))
         self.menuConnect.setTitle(_translate("MainWindow", "Menu"))
-        self.actionWebsite.setText(_translate("MainWindow", "visit robotcing.sk"))
+        self.actionWebsite.setText(_translate("MainWindow", "Visit robotcing.sk"))
         self.actionAbout.setText(_translate("MainWindow", "About Robot Cing"))
         self.actionTroubleshooting.setText(_translate("MainWindow", "Troubleshooting"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
@@ -720,7 +720,6 @@ class Ui_MainWindow(object):
         ReadCingSensors.update(self)
         QtCore.QTimer.singleShot(90, self.updateData)
     ################################
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

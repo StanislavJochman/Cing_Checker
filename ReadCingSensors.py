@@ -111,7 +111,7 @@ import ReadCingSensors
         self.actionWebsite.triggered.connect(lambda: ReadCingSensors.site_open())
         self.actionTroubleshooting.triggered.connect(lambda: ReadCingSensors.troubleshooting_open())
         self.actionExitApp.triggered.connect(lambda: sys.exit())
-        self.actionConfig.triggered.connect(lambda: config_open())
+        self.actionConfig.triggered.connect(lambda: ReadCingSensors.config_open())
         QtCore.QTimer.singleShot(2000, self.updateData)
         ################################
 
