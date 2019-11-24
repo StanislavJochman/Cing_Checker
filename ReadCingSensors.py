@@ -103,16 +103,15 @@ connect_to_board()
 import ReadCingSensors
 ################################
 
-        #Custom code
+        #Custom code    
         ################################
-        #self.actionAbout.triggered.connect(lambda: self.clicked("COM2"))
         self.actionAbout.triggered.connect(lambda: ReadCingSensors.about_open())
         self.actionWebsite.triggered.connect(lambda: ReadCingSensors.site_open())
         self.actionTroubleshooting.triggered.connect(lambda: ReadCingSensors.troubleshooting_open())
         self.actionExit.triggered.connect(lambda: sys.exit())
-        self.actionConnect.triggered.connect(lambda: ReadCingSensors.connect())
         QtCore.QTimer.singleShot(2000, self.updateData)
         ################################
+
     #Custom code
     ################################
     def updateData(self):
