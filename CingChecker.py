@@ -17,6 +17,7 @@ class Ui_MainWindow(object):
         icon.addPixmap(QtGui.QPixmap("icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         MainWindow.setWindowIcon(icon)
         MainWindow.setWindowOpacity(1.0)
+        MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: rgb(33, 37, 41);")
         MainWindow.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -666,7 +667,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Cing Checker"))
         self.title_16.setText(_translate("MainWindow", "LightSensor 1"))
         self.value4.setText(_translate("MainWindow", "Loading value"))
-        self.title_4.setText(_translate("MainWindow", "LightSensor 1"))
+        self.title_4.setText(_translate("MainWindow", "ShineSensor 2"))
         self.value5.setText(_translate("MainWindow", "Loading value"))
         self.title_5.setText(_translate("MainWindow", "Button"))
         self.title_2.setText(_translate("MainWindow", "Light sensor 2"))
@@ -683,7 +684,7 @@ class Ui_MainWindow(object):
         self.value7.setText(_translate("MainWindow", "Loading value"))
         self.title_19.setText(_translate("MainWindow", "Lidar"))
         self.value10.setText(_translate("MainWindow", "Loading value"))
-        self.title_3.setText(_translate("MainWindow", "LightSensor 1"))
+        self.title_3.setText(_translate("MainWindow", "ShineSensor 1"))
         self.value14.setText(_translate("MainWindow", "Loading value"))
         self.value2.setText(_translate("MainWindow", "Loading value"))
         self.title_8.setText(_translate("MainWindow", "Oled"))
@@ -713,13 +714,14 @@ class Ui_MainWindow(object):
         self.actionConfig.setText(_translate("MainWindow", "Config"))
         self.actionExit_2.setText(_translate("MainWindow", "Exit"))
         self.actionExitApp.setText(_translate("MainWindow", "Exit"))
-
+    
     #Custom code
     ################################
     def updateData(self):
         ReadCingSensors.update(self)
         QtCore.QTimer.singleShot(90, self.updateData)
     ################################
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
